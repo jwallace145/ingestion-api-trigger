@@ -1,29 +1,43 @@
+# lambda function
+
+# import requests module
 import requests
 
+# import schedule model
 from schedule import Schedule
 
+# import uri constants
+from constants import DATABASE_LIBRARY_SCHEDULES_URI
+from constants import INGESTION_API_URI
 
+# import schedule keys
+from constants import SYMBOL
+from constants import FUNCTION
+from constants import INTERVAL
+from constants import FROM_CURRENCY
+from constants import TO_CURRENCY
+from constants import MARKET
+
+
+# lambda handler function invoked by cloud watch
 def lambda_handler(event, context):
     schedules = get_schedules()
     return 'hello'
 
 
-# create a method to call the database library api and get one schedule at a time
-# with each schedule we get from the database we should call the ingestion api with
-# those specific parameters
+# return a list of all the schedules contained in the database
 def get_schedules():
-    schedules_request = requests.get("http://127.0.0.1:8080/schedule/all")
+    schedules_request = requests.get(DATABASE_LIBRARY_SCHEDULES_URI)
     schedules_json = schedules_request.json()
 
     schedules = []
     for schedule_json in schedules_json:
-        print(schedule_json)
-        symbol = schedule_json.get('symbol')
-        function = schedule_json.get('function')
-        interval = schedule_json.get('interval')
-        from_currency = schedule_json.get('fromCurrency')
-        to_currency = schedule_json.get('toCurrency')
-        market = schedule_json.get('market')
+        symbol = schedule_json.get(SYMBOL)
+        function = schedule_json.get(FUNCTION)
+        interval = schedule_json.get(INTERVAL)
+        from_currency = schedule_json.get(FROM_CURRENCY)
+        to_currency = schedule_json.get(TO_CURRENCY)
+        market = schedule_json.get(MARKET)
 
         schedule = Schedule(symbol, function, interval, from_currency, to_currency, market)
         schedules.append(schedule)
@@ -31,9 +45,9 @@ def get_schedules():
     return schedules
 
 
-# create a method that calls the ingestion api
-def trigger_ingestion_api(schedule):
-    uri = 'http://127.0.0.1:8081/ingest/stocks'
+# trigger the ingestion api to ingest the scheduled stock data
+def trigger_ingest_stocks(schedule):
+    uri = INGESTION_API_URI
 
     uri += '/' + schedule.function
     uri += '/' + schedule.symbol
@@ -47,7 +61,11 @@ def trigger_ingestion_api(schedule):
     return 1
 
 
-schedules = get_schedules()
+# trigger the ingestion api to ingest the scheduled cryptos data
+def trigger_ingest_cryptos(schedule):
+    return 1
 
-for s in schedules:
-    trigger_ingestion_api(s)
+
+# trigger the ingestion api to ingest the scheduled forex data
+def trigger_ingest_forex(schedule):
+    return 1
