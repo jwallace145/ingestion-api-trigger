@@ -1,14 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="2059c9ab-9aa1-4973-86c5-8b540d1ad2ef" name="Default Changelist" comment="" />
+    <list default="true" id="908d1a3a-3f90-4f83-88fe-635c7a488f93" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/ingestion-ms-trigger.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lambda_function.py" beforeDir="false" afterPath="$PROJECT_DIR$/lambda_function.py" afterDir="false" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="ProjectId" id="1Rg517racomiJEwWQJ2klGf9wTp" />
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="ProjectId" id="1Rg8v93eGmcaoFhdGZQK4vGw9KN" />
   <component name="RunDashboard">
     <option name="ruleStates">
       <list>
@@ -26,12 +34,23 @@
   </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="2059c9ab-9aa1-4973-86c5-8b540d1ad2ef" name="Default Changelist" comment="" />
-      <created>1570075680453</created>
+      <changelist id="908d1a3a-3f90-4f83-88fe-635c7a488f93" name="Default Changelist" comment="" />
+      <created>1570077606644</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1570075680453</updated>
+      <updated>1570077606644</updated>
     </task>
     <servers />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
 </project>
